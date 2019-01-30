@@ -1,0 +1,20 @@
+#welcome {
+  margin-top: 200px;
+  h1 {
+    color: $white;
+    text-align: center;
+    padding: 15px;
+    font-size: 64px;
+  }
+  a {
+    @extend .btn, .btn-lg, .rounded-0, .justify-content-center, .d-flex;
+    background-color: $pink;
+    color: $white;
+    transition: all 900ms ease;
+    &:hover {
+      background-color: $white;
+      color: $pink;
+      transition: all 900ms ease;
+    }
+  }
+}

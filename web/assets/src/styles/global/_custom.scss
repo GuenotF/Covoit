@@ -1,0 +1,14 @@
+.covoit {
+  &-container {
+    @extend .container;
+    &-fluid {
+      @extend .container-fluid;
+    }
+  }
+  &-row {
+    @extend .row;
+    &-middle {
+      @extend .row, .align-items-center;
+    }
+  }
+}

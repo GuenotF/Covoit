@@ -1,0 +1,4 @@
+.idea
+/out/
+web/assets/node_modules
+web/assets/dist
