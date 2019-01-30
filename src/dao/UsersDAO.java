@@ -4,6 +4,7 @@ import models.EntityManagerAccess;
 import models.UsersEntity;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 public class UsersDAO extends UsersEntity {
 
@@ -49,6 +50,7 @@ public class UsersDAO extends UsersEntity {
         user.setLon(lon);
         user.setFkAgency(fk_agency);
         user.setFkCar(fk_car);
+        user.setPassword(pwd);
 
         em.getTransaction().begin();
         em.persist(user);
@@ -88,6 +90,14 @@ public class UsersDAO extends UsersEntity {
         em.getTransaction().begin();
         em.remove(user);
         em.getTransaction().commit();
+
+    }
+
+    public List<UsersEntity> findAllUsers(){
+
+        List<UsersEntity> ListResult = (List<UsersEntity>) em.createQuery("SELECT u FROM UsersEntity u", UsersEntity.class).getResultList();
+
+        return ListResult;
 
     }
 

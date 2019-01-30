@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <template:template_base title="home">
   <jsp:attribute name="content">
@@ -22,29 +23,30 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <form>
+                      <form method="POST" action="home">
                         <div class="form-group">
                           <label for="recipient-prenom" class="col-form-label">Prénom:</label>
-                          <input type="text" class="form-control" id="recipient-prenom">
+                          <input type="text" name="firstName" class="form-control" id="recipient-prenom">
                         </div>
                         <div class="form-group">
                           <label for="recipient-nom" class="col-form-label">Nom:</label>
-                          <input type="text" class="form-control" id="recipient-nom">
+                          <input name="lastName" type="text" class="form-control" id="recipient-nom">
                         </div>
                         <div class="form-group">
                           <label for="recipient-email" class="col-form-label">eMail:</label>
-                          <input type="text" class="form-control" id="recipient-email">
+                          <input name="email" type="text" class="form-control" id="recipient-email">
                         </div>
                         <div class="form-group">
                           <label for="recipient-mdptmp" class="col-form-label">Mot de passe temporaire:</label>
-                          <input type="text" class="form-control" id="recipient-mdptmp">
+                          <input name="password" type="password" class="form-control" id="recipient-mdptmp">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                          <button type="submit" class="btn btn-primary">Enregistrer</button>
                         </div>
                       </form>
                     </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                      <button type="button" class="btn btn-primary">Enregistrer</button>
-                    </div>
+
                   </div>
                 </div>
               </div>
@@ -66,6 +68,16 @@
                 </tr>
                 </thead>
                 <tbody>
+                <c:forEach items="${sessionScope['UsrList']}" var="user">
+
+                  <tr>
+                    <td scope="row">${user.value.getId()}</td>
+                    <td scope="row">${user.value.getFirstName()}</td>
+                    <td scope="row">${user.value.getLastName()}</td>
+                    <td scope="row">${user.value.getEmail()}</td>
+                  </tr>
+
+                </c:forEach>
                 <tr>
                   <th scope="row">1</th>
 
