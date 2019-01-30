@@ -7,35 +7,29 @@ import javax.persistence.EntityManager;
 
 public class UsersDAO extends UsersEntity {
 
+    private boolean userExist = false;
+
     //Instanciation et accès à l'EM.
     EntityManagerAccess ema = new EntityManagerAccess();
     EntityManager em = ema.getEntityManager();
 
-//    String id;
-//    String firstName;
-//    String lastName;
-//    String email;
-//    String picture;
-//    String adress;
-//    String pwd;
-//
-//    boolean smoking;
-//    boolean talkative;
-//    boolean music;
-//    boolean isAdmin;
-//
-//    double lat;
-//    double lon;
-//
-//    int fk_agency;
-//    int fk_car;
-
-
     public UsersEntity findUserByEmail(String email){
 
-        UsersEntity resultUser = (UsersEntity) em.createNamedQuery("SELECT * FROM users WHERE email ="+email).getSingleResult();
+        UsersEntity resultUser = (UsersEntity) em.createQuery("SELECT u FROM UsersEntity u WHERE u.email = :email", UsersEntity.class).setParameter("email", email).getSingleResult();
 
         return resultUser;
+    }
+
+    public boolean findUserByEmailAndPassword(String email, String password){
+
+        UsersEntity resultUser = (UsersEntity) em.createQuery("SELECT u FROM UsersEntity u WHERE u.email = :email AND password= :password", UsersEntity.class).setParameter("email", email).setParameter("password", password).getSingleResult();
+
+        if (resultUser != null) {
+            userExist = true;
+            System.out.println(userExist);
+        }
+
+        return userExist;
     }
 
     public void createUser(String firstName, String lastName, String email, String picture, byte smoking, byte talkative, byte music, byte isAdmin, String adress, double lat, double lon, int fk_agency, int fk_car, String pwd){

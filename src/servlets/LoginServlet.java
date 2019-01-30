@@ -1,6 +1,7 @@
 package servlets;
 
 import dao.AgenciesDAO;
+import dao.UsersDAO;
 import forms.LoginForm;
 import models.AgenciesEntity;
 import models.EntityManagerAccess;
@@ -20,41 +21,27 @@ public class LoginServlet extends HttpServlet {
     private static final String USER = "user";
     private static final String SESSION = "session";
     private static final String VIEW = "/WEB-INF/user/login.jsp";
+    private static final String VIEW_HOME = "home";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         LoginForm form = new LoginForm();
-
-//        User user = form.login( request );
-        AgenciesDAO agenciesDAO = new AgenciesDAO();
-        AgenciesEntity agenciesEntity = agenciesDAO.findAgencyById(1);
-        System.out.println(agenciesEntity.getName());
-
+        UsersDAO user = form.login(request);
         HttpSession session = request.getSession();
 
         if ( form.getErrors().isEmpty() ) {
-//            session.setAttribute( SESSION, user );
+            session.setAttribute( SESSION, user );
+            response.sendRedirect(VIEW_HOME);
         } else {
             session.setAttribute( SESSION, null );
+            this.getServletContext().getRequestDispatcher( VIEW ).forward( request, response );
         }
 
         request.setAttribute( FORM, form );
-//        request.setAttribute( USER, user );
-
-        this.getServletContext().getRequestDispatcher( VIEW ).forward( request, response );
+        request.setAttribute( USER, user );
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("OK");
-
-        //AgenciesDAO agenceDAO = new AgenciesDAO();
-
-        //AgenciesEntity agence = agenceDAO.findAgencyById(1);
-
-        //System.out.println(agence.getName());
-
-
-
         this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
     }
 }
