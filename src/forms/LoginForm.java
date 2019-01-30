@@ -1,12 +1,17 @@
 package forms;
 
+import dao.UsersDAO;
+import models.UsersEntity;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginForm {
     private static final String EMAIL  = "email";
     private static final String PASSWORD   = "password";
+    private Boolean userExist = false;
 
     private String results;
     private Map<String, String> errors = new HashMap<String, String>();
@@ -19,36 +24,42 @@ public class LoginForm {
         return errors;
     }
 
-//    public User login(HttpServletRequest request ) {
-//        String email = getValeurChamp( request, EMAIL );
-//        String motDePasse = getValeurChamp( request, PASSWORD );
-//
-//        User user = new User();
-//
-//        try {
-//            validationEmail( email );
-//        } catch ( Exception e ) {
-//            setErreur( EMAIL, e.getMessage() );
-//        }
-//        user.setEmail( email );
-//
-//        /* Validation du champ mot de passe. */
-//        try {
-//            validationMotDePasse( motDePasse );
-//        } catch ( Exception e ) {
-//            setErreur( PASSWORD, e.getMessage() );
-//        }
-//        user.setPassword( motDePasse );
-//
-//        /* Initialisation du résultat global de la validation. */
-//        if ( errors.isEmpty() ) {
-//            results = "Succès de la connexion.";
-//        } else {
-//            results = "Échec de la connexion.";
-//        }
-//
-//        return user;
-//    }
+    public UsersDAO login(HttpServletRequest request ) {
+        String email = getValeurChamp( request, EMAIL );
+        String password = getValeurChamp( request, PASSWORD );
+        HttpSession session;
+        UsersDAO usersDAO = new UsersDAO();
+
+        UsersEntity user  = usersDAO.findUserByEmail(email);
+
+        if (usersDAO.findUserByEmailAndPassword(user.getEmail(), user.getPassword())) {
+            this.userExist = true;
+        }
+
+        try {
+            validationEmail( email );
+        } catch ( Exception e ) {
+            setErreur( EMAIL, e.getMessage() );
+        }
+
+        try {
+            validationMotDePasse( password );
+        } catch ( Exception e ) {
+            setErreur( PASSWORD, e.getMessage() );
+        }
+        user.setPassword( password );
+
+
+
+
+        if ( errors.isEmpty() && userExist) {
+            results = "Succès de la connexion.";
+        } else {
+            results = "Échec de la connexion.";
+        }
+
+        return usersDAO;
+    }
 
     private void validationEmail( String email ) throws Exception {
         if ( email != null && !email.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {
