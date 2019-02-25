@@ -20,7 +20,7 @@ module.exports = merge(common, {
                 ],
             },
             {
-                test: /\.(jpe?g)$/i,
+                test: /\.(png|jpe?g)$/i,
                 use:[
                     {
                         loader: 'file-loader',
