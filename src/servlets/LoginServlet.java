@@ -5,6 +5,7 @@ import dao.UsersDAO;
 import forms.LoginForm;
 import models.AgenciesEntity;
 import models.EntityManagerAccess;
+import models.UsersEntity;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,10 +26,8 @@ public class LoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println("Boucle doppost login");
-
         LoginForm form = new LoginForm();
-        UsersDAO user = form.login(request);
+        UsersEntity user = form.login(request);
         HttpSession session = request.getSession();
 
         if ( form.getErrors().isEmpty() ) {

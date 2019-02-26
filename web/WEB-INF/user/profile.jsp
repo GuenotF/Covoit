@@ -17,27 +17,27 @@
                         <div class="covoit-profile">
                             <div class="covoit-profile-content">
                                 <div class="d-flex justify-content-start">
-                                <label>Parlez nous de vous:</label>
+                                <label style="font-size: large">Parlez nous de vous:</label>
                                 </div>
                                 <div class="d-flex justify-content-start form-group">
                                 <input type="text" class="form-control">
                                 </div>
                                 <div class="d-flex justify-content-start form-group">
                                     <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox">
-                                    <label>fumeur?</label>
+                                <input class="form-check-input" type="checkbox" data-toggle="tooltip" data-html="true" title="le tabac c'est taboo...">
+                                    <img src="assets/src/ressources/smoking.png" style="height: 25px; width: 25px">
                                     </div>
                                     <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox">
-                                    <label>mélomane?</label>
+                                <input class="form-check-input" type="checkbox" data-toggle="tooltip" data-html="true" title="Branchez la guitare, Entonnez le tambour, Moi, j'accorde ma basse, Un, deux, trois, quatre…">
+                                        <img src="assets/src/ressources/music.png" style="height: 25px; width: 25px">
                                     </div>
                                     <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox">
-                                    <label>pet-lover?</label>
+                                <input class="form-check-input" type="checkbox" data-toggle="tooltip" data-html="true" title="vous les aimez beaucoup (trop)!!!">
+                                        <img src="assets/src/ressources/pet.png" style="height: 25px; width: 25px">
                                     </div>
                                     <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox">
-                                    <label>bavard?</label>
+                                <input class="form-check-input" type="checkbox" data-toggle="tooltip" data-html="true" title="blabla">
+                                        <img src="assets/src/ressources/talk.png" style="height: 25px; width: 25px">
                                     </div>
                                 </div>
                             </div>

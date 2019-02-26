@@ -1,3 +1,4 @@
+<%@ tag import="models.UsersEntity" %>
 <%@ tag language="java" pageEncoding="UTF-8" %>
 <%@ attribute name="title" required="true" rtexprvalue="true" %>
 <%@ attribute name="content" fragment="true" %>
@@ -33,14 +34,23 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
+                        <% if (session.getAttribute("session") != null){ %>
                         <a class="nav-item nav-link active" href="homeloggedpassenger">Accueil <span class="sr-only">(current)</span></a>
+                        <%}%>
+                        <% if (session.getAttribute("session") != null){ %>
                         <a class="nav-item nav-link" href="profile">Profil</a>
+                        <%}%>
+                        <% UsersEntity userTemp = (UsersEntity) session.getAttribute("session");
+                            if (session.getAttribute("session") !=null && userTemp.getIsAdmin() == 0){ %>
                         <a class="nav-item nav-link" href="admin">Admin</a>
-                        <a class="nav-item nav-link" href="#">Se déconnecter</a>
+                        <%}%>
+                        <% if (session.getAttribute("session") != null){ %>
+                        <a class="nav-item nav-link" href="logout">Se déconnecter</a>
+                        <%}%>
                     </div>
                 </div>
             </nav>
-        </div>a
+        </div>
     </div>
 
 

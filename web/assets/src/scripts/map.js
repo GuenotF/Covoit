@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     xhr.send(data.toString());
                     map.setView([pos.coords.latitude, pos.coords.longitude], 15);
                     const iconCar = L.icon({
-                        iconUrl: 'assets/dist/images/car.png',
+                        iconUrl: 'assets/dist/images/street-view.png',
                         //shadowUrl: 'leaf-shadow.png',
                         iconSize:     [64, 64],
                         shadowSize:   [64, 64],
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function addMarkers(markers) {
         markers.forEach(item => {
             var iconUser = L.icon({
-                iconUrl: 'assets/dist/images/29.png',
+                iconUrl: 'assets/dist/images/place-marker.png',
                 //shadowUrl: 'leaf-shadow.png',
                 iconSize:     [64, 64],
                 shadowSize:   [64, 64],
