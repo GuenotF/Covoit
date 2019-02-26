@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
     private static final String USER = "user";
     private static final String SESSION = "session";
     private static final String VIEW = "/WEB-INF/user/login.jsp";
-    private static final String VIEW_HOME = "home";
+    private static final String VIEW_HOME = "homeloggedpassenger";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

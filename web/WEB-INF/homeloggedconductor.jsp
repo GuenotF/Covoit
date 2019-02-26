@@ -1,45 +1,66 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="template" tagdir="/WEB-INF/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<%@ taglib prefix="template" tagdir="/WEB-INF/tags" %>
-
-<template:template_base title="login">
+<template:template_base title="homeloggedconductor">
   <jsp:attribute name="content">
-  <div class="covoit-container">
-  </div>
+    <div class="covoit-container">
+    </div>
     <div class="covoit-container" style="margin-top: 5%">
+        <div id="page-top" class="d-flex justify-content-center align-items-center">
+            <img src="assets/src/ressources/icons8-pickup-point-64.png" >
+            <p class="page-top-title">Votre prochain trajet</p>
+        </div>
         <div class="covoit-row">
             <div class="covoit-login">
-                <div class="covoit-login-content">
-                    <form method="post" action="login" novalidate>
-                        <img src="assets/src/ressources/icons8-contacts-96.png">
-                        <h2>Se connecter</h2>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control ${empty form.errors['email'] ? '' : 'is-invalid'}" value="<c:out value="${user.email}"/>" />
-                            <span class="errors">${form.errors['email']}</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Mot de passe</label>
-                            <input type="password" id="password" class="form-control ${empty form.errors['password'] ? '' : 'is-invalid'}" name="password" value="" />
-                            <span class="errors">${form.errors['password']}</span>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="remember-me"> Se souvenir
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Se connecter</button>
+                <div class="covoit-login-content" id="carte">
+
+
+                </div>
+                <div>
+                <ul class="nav nav-tabs">
+                    <li><a href="homeloggedpassenger">Passager</a></li>
+                    <li class="active"><a href="homeloggedconductor">Conducteur</a></li>
+                </ul>
+                </div>
+                <div>
+                    <form>
+                        <div class="form-row align-items-center">
+                            <div class="col-auto my-1">
+                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Départ</label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Choisissez...</option>
+                                    <option value="1">Votre position</option>
+                                    <option value="2">Domicile</option>
+                                </select>
+                            </div>
+                            <div class="col-auto my-1">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                                    <label class="custom-control-label" for="customControlAutosizing">Par défaut</label>
+                                </div>
+                            </div>
+                            <div class="col-auto my-1">
+                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Arrivée</label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Choisissez...</option>
+                                    <option value="1">Site 1</option>
+                                    <option value="2">Site 2</option>
+                                    <option value="2">Site 3</option>
+                                </select>
+                            </div>
+                            <div class="col-auto my-1">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                                    <label class="custom-control-label" for="customControlAutosizing">Par défaut</label>
+                                </div>
+                            </div>
+                            <div class="col-auto my-1">
+                                <button type="submit" class="btn btn-primary">Rechercher</button>
+                            </div>
                         </div>
                     </form>
-                    <a href="#">Mot de passe oublié?</a>
                 </div>
-                <c:if test = "${form.results}">
-                    <div class="form-errors">
-                        <p class="${empty form.errors ? 'success' : 'error'}">${form.results}</p>
-                    </div>
-                </c:if>
             </div>
             <div class="covoit-login-list">
                 <div class="covoit-login-list-content">
@@ -102,3 +123,4 @@
     </div>
   </jsp:attribute>
 </template:template_base>
+
