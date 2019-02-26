@@ -17,4 +17,9 @@ import {Map} from './map'
 import {AnimateMarker} from './animate-markers'
 import '../ressources/place-marker.png'
 import '../ressources/street-view.png'
+import '../ressources/smoking.png'
+import '../ressources/pet.png'
+import '../ressources/music.png'
+import '../ressources/talk.png'
+
 

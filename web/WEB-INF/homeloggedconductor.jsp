@@ -40,8 +40,8 @@
                                     </div>
                                     <div class="col-auto my-1">
                                         <div class="custom-control custom-checkbox mr-sm-2">
-                                            <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                            <label class="custom-control-label" for="customControlAutosizing">Par défaut</label>
+                                            <input type="checkbox" class="custom-control-input" id="defaultstartpoint">
+                                            <label class="custom-control-label" for="defaultstartpoint">Par défaut</label>
                                         </div>
                                     </div>
                                     <div class="col-auto my-1">
@@ -55,8 +55,8 @@
                                     </div>
                                     <div class="col-auto my-1">
                                         <div class="custom-control custom-checkbox mr-sm-2">
-                                            <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                            <label class="custom-control-label" for="customControlAutosizing">Par défaut</label>
+                                            <input type="checkbox" class="custom-control-input" id="defaultendpoint">
+                                            <label class="custom-control-label" for="defaultendpoint">Par défaut</label>
                                         </div>
                                     </div>
                                     <div class="col-auto my-1">
@@ -78,7 +78,7 @@
                                     <h3><a href="#">Partager votre trajet avec Aymeric</a></h3>
                                     <div>à 1800M</div>
                                     <p>Amateur de chevaux qui tachent? De musique Punk et de basses?</p>
-                                    <a href="#">Voir plus</a>
+                                    <button class="btn btn-primary">Choisir</button>
                                 </div>
                             </div>
                             <div class="covoit-home-list-card-right">
@@ -96,7 +96,7 @@
                                     <h3><a href="#">Partager votre trajet avec Fabien</a></h3>
                                     <div>à 2400M</div>
                                     <p>Attention! Humour qui tâche!!!</p>
-                                    <a href="#">Voir plus</a>
+                                    <button class="btn btn-primary">Choisir</button>
                                 </div>
                             </div>
                             <div class="covoit-home-list-card-right">
@@ -114,7 +114,7 @@
                                     <h3><a href="#">Partager votre trajet avec Lyzzie</a></h3>
                                     <div>à 3600M</div>
                                     <p>Girl Power!</p>
-                                    <a href="#">Voir plus</a>
+                                    <button class="btn btn-primary">Choisir</button>
                                 </div>
                             </div>
                             <div class="covoit-home-list-card-right">
