@@ -65,31 +65,22 @@
                   <th scope="col">Prénom</th>
                   <th scope="col">Nom</th>
                   <th scope="col">eMail</th>
+                  <th scope="col">agency</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${sessionScope['UsrList']}" var="user">
+                <c:forEach items="${UsrList}" var="user">
 
                   <tr>
-                    <td scope="row">${user.value.getId()}</td>
-                    <td scope="row">${user.value.getFirstName()}</td>
-                    <td scope="row">${user.value.getLastName()}</td>
-                    <td scope="row">${user.value.getEmail()}</td>
+                    <td>${user.getId()}</td>
+                    <td>${user.getFirstName()}</td>
+                    <td>${user.getLastName()}</td>
+                    <td>${user.getEmail()}</td>
+                    <td>${user.getFkAgency().getName()}</td>
                   </tr>
 
                 </c:forEach>
-                <tr>
-                  <th scope="row">1</th>
 
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-
-                </tr>
                 </tbody>
               </table>
             </div>

@@ -24,4 +24,12 @@ public class CarsDAO extends CarsEntity {
         em.persist(car);
         em.getTransaction().commit();
     }
+
+
+    public CarsEntity findCarsById(int id){
+
+        CarsEntity cars = em.find(CarsEntity.class, id);
+
+        return cars;
+    }
 }

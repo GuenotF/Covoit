@@ -2,6 +2,7 @@ package dao;
 
 import models.EntityManagerAccess;
 import models.TripsEntity;
+import models.UsersEntity;
 
 import javax.persistence.EntityManager;
 import java.sql.Date;
@@ -13,7 +14,8 @@ public class TripsDAO extends TripsEntity {
     EntityManagerAccess ema = new EntityManagerAccess();
     EntityManager em = ema.getEntityManager();
 
-    public void createTrip(Date date, Time timeArrive, int seats, int fk_owner){
+
+    public void createTrip(Date date, Time timeArrive, int seats, UsersEntity fk_owner){
 
         TripsEntity trip = new TripsEntity();
 
