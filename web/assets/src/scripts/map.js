@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 pos => {
                     map.setView([pos.coords.latitude, pos.coords.longitude], 15);
                     var iconCar = L.icon({
-                        iconUrl: 'assets/dist/images/car.png',
+                        iconUrl: 'assets/dist/images/street-view.png',
                         //shadowUrl: 'leaf-shadow.png',
                         iconSize:     [64, 64],
                         shadowSize:   [64, 64],
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function addMarkers(markers) {
         markers.forEach(item => {
             var iconUser = L.icon({
-                iconUrl: 'assets/dist/images/29.png',
+                iconUrl: 'assets/dist/images/place-marker.png',
                 //shadowUrl: 'leaf-shadow.png',
                 iconSize:     [64, 64],
                 shadowSize:   [64, 64],

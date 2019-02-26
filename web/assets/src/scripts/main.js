@@ -15,6 +15,6 @@ import {Tooltip} from 'bootstrap/js/src/tooltip'
 import {Util} from 'bootstrap/js/src/util'
 import {Map} from './map'
 import {AnimateMarker} from './animate-markers'
-import '../ressources/29.png'
-import '../ressources/car.png'
+import '../ressources/place-marker.png'
+import '../ressources/street-view.png'
 
