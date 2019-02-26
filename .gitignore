@@ -2,3 +2,4 @@
 /out/
 web/assets/node_modules
 web/assets/dist
+src/META-INF/persistence.xml

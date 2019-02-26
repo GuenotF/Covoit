@@ -25,6 +25,8 @@ public class LoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        System.out.println("Boucle doppost login");
+
         LoginForm form = new LoginForm();
         UsersDAO user = form.login(request);
         HttpSession session = request.getSession();

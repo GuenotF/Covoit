@@ -1,5 +1,7 @@
 package dao;
 
+import models.AgenciesEntity;
+import models.CarsEntity;
 import models.EntityManagerAccess;
 import models.UsersEntity;
 
@@ -33,7 +35,7 @@ public class UsersDAO extends UsersEntity {
         return userExist;
     }
 
-    public void createUser(String firstName, String lastName, String email, String picture, byte smoking, byte talkative, byte music, byte isAdmin, String adress, double lat, double lon, int fk_agency, int fk_car, String pwd){
+    public void createUser(String firstName, String lastName, String email, String picture, byte smoking, byte talkative, byte music, byte isAdmin, String adress, double lat, double lon, AgenciesEntity fk_agency, CarsEntity fk_car, String pwd){
 
         UsersEntity user = new UsersEntity();
 
@@ -59,7 +61,7 @@ public class UsersDAO extends UsersEntity {
     }
 
                                         //A VOIR  ==> Type "byte" au lieu de "boolean"?
-    public void updateUserById(int id, String firstName, String lastName, String email, String picture, byte smoking, byte talkative, byte music, byte isAdmin, String adress, double lat, double lon, int fk_agency, int fk_car, String pwd){
+    public void updateUserById(int id, String firstName, String lastName, String email, String picture, byte smoking, byte talkative, byte music, byte isAdmin, String adress, double lat, double lon, AgenciesEntity fk_agency, CarsEntity fk_car, String pwd){
 
         UsersEntity resultUser= em.find(UsersEntity.class, id);
 

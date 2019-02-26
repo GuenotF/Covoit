@@ -7,8 +7,8 @@ import java.util.Objects;
 @Table(name = "user_to_trip", schema = "covoit_bdd", catalog = "")
 public class UserToTripEntity {
     private int id;
-    private int fkUser;
-    private int fkTrip;
+    private UsersEntity fkUser;
+    private TripsEntity fkTrip;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -20,23 +20,23 @@ public class UserToTripEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "fk_user", nullable = false)
-    public int getFkUser() {
+    @OneToOne
+    @JoinColumn(name = "fk_user", nullable = false)
+    public UsersEntity getFkUser() {
         return fkUser;
     }
 
-    public void setFkUser(int fkUser) {
+    public void setFkUser(UsersEntity fkUser) {
         this.fkUser = fkUser;
     }
 
-    @Basic
-    @Column(name = "fk_trip", nullable = false)
-    public int getFkTrip() {
+    @OneToOne
+    @JoinColumn(name = "fk_trip", nullable = false)
+    public TripsEntity getFkTrip() {
         return fkTrip;
     }
 
-    public void setFkTrip(int fkTrip) {
+    public void setFkTrip(TripsEntity fkTrip) {
         this.fkTrip = fkTrip;
     }
 

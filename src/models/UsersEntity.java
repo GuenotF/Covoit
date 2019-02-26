@@ -18,8 +18,8 @@ public class UsersEntity {
     private String adress;
     private Double lat;
     private Double lon;
-    private int fkAgency;
-    private int fkCar;
+    private AgenciesEntity fkAgency;
+    private CarsEntity fkCar;
     private String password;
 
     @Id
@@ -142,23 +142,23 @@ public class UsersEntity {
         this.lon = lon;
     }
 
-    @Basic
-    @Column(name = "fk_agency", nullable = false)
-    public int getFkAgency() {
+    @OneToOne
+    @JoinColumn(name = "fk_agency", nullable = false)
+    public AgenciesEntity getFkAgency() {
         return fkAgency;
     }
 
-    public void setFkAgency(int fkAgency) {
+    public void setFkAgency(AgenciesEntity fkAgency) {
         this.fkAgency = fkAgency;
     }
 
-    @Basic
-    @Column(name = "fk_car", nullable = false)
-    public int getFkCar() {
+    @OneToOne
+    @JoinColumn(name = "fk_car", nullable = false)
+    public CarsEntity getFkCar() {
         return fkCar;
     }
 
-    public void setFkCar(int fkCar) {
+    public void setFkCar(CarsEntity fkCar) {
         this.fkCar = fkCar;
     }
 

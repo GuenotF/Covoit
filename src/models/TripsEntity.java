@@ -12,7 +12,7 @@ public class TripsEntity {
     private Date date;
     private Time timeArrive;
     private int seats;
-    private int fkOwner;
+    private UsersEntity fkOwner;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -54,13 +54,13 @@ public class TripsEntity {
         this.seats = seats;
     }
 
-    @Basic
-    @Column(name = "fk_owner", nullable = false)
-    public int getFkOwner() {
+    @OneToOne
+    @JoinColumn(name = "fk_owner", nullable = false)
+    public UsersEntity getFkOwner() {
         return fkOwner;
     }
 
-    public void setFkOwner(int fkOwner) {
+    public void setFkOwner(UsersEntity fkOwner) {
         this.fkOwner = fkOwner;
     }
 
