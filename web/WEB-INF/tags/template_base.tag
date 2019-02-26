@@ -6,11 +6,20 @@
 <html>
 <head>
     <title>${title}</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+            integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+            crossorigin=""></script>
     <link rel="stylesheet" href="assets/dist/styles/main.css">
     <script type="text/javascript" src="assets/dist/scripts/main.js"></script>
+
 </head>
 
 <body style="background-image: url('assets/src/ressources/OGA1EQ0.jpg')">
+
     <div class="row">
         <div class="col-12">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -31,6 +40,8 @@
             </nav>
         </div>
     </div>
+
+
 
     <jsp:invoke fragment="content"></jsp:invoke>
 

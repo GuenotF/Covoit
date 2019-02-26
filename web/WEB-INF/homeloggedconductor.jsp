@@ -14,8 +14,7 @@
         <div class="covoit-row">
             <div class="covoit-login">
                 <div class="covoit-login-content" id="carte">
-
-
+                    <div id="map" style="width: 50%; height: 600px;"></div>
                 </div>
                 <div>
                 <ul class="nav nav-tabs">
