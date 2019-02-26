@@ -6,19 +6,8 @@
 <template:template_base title="login">
   <jsp:attribute name="content">
   <div class="covoit-container">
-      <div class="covoit-row-middle">
-          <div class="covoit-login-top-left">
-              <h1>Covoituator 3000</h1>
-          </div>
-          <div class="covoit-login-top-center">
-              <img src="assets/src/ressources/icons8-nature-care-96.png" >
-          </div>
-          <div class="covoit-login-top-right">
-              <h2>Bougez éco et social</h2>
-          </div>
-      </div>
   </div>
-    <div class="covoit-container">
+    <div class="covoit-container" style="margin-top: 5%">
         <div class="covoit-row">
             <div class="covoit-login">
                 <div class="covoit-login-content">
