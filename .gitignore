@@ -5,7 +5,7 @@ web/assets/dist
 ### Java template
 # Compiled class file
 *.class
-
+src/META-INF/persistence.xml
 # Log file
 *.log
 

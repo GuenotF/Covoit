@@ -13,8 +13,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "HomeServlet", urlPatterns = "/home")
-public class HomeServlet extends HttpServlet {
+@WebServlet(name = "AdminServlet", urlPatterns = "/admin")
+public class AdminServlet extends HttpServlet {
     private boolean isLoggedIn = true;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,7 +29,7 @@ public class HomeServlet extends HttpServlet {
 
         usrDAO.createUser(usrTemp.getFirstName(), usrTemp.getLastName(), usrTemp.getEmail(), "#", (byte) 1, (byte) 1, (byte) 1, (byte) 1, "2 rue des fleurs", 1.2, 1.2, 1, 1, usrTemp.getPassword());
 
-        this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/WEB-INF/admin.jsp").forward(request, response);
 
 
     }
@@ -38,7 +38,7 @@ public class HomeServlet extends HttpServlet {
         if(!isLoggedIn){
             this.getServletContext().getRequestDispatcher("/WEB-INF/user/login.jsp").forward(request, response);
         } else {
-            this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+            this.getServletContext().getRequestDispatcher("/WEB-INF/admin.jsp").forward(request, response);
         }
 
         UsersDAO usrDAO = new UsersDAO();

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "HomeServlet", urlPatterns = "/homeloggedpassenger")
+@WebServlet(name = "HomeLoggedServletPassenger", urlPatterns = "/homeloggedpassenger")
 public class HomeLoggedServletPassenger extends HttpServlet {
     private boolean isLoggedIn = true;
 

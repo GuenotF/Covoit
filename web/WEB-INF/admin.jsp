@@ -23,7 +23,7 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <form method="POST" action="home">
+                      <form method="POST" action="admin">
                         <div class="form-group">
                           <label for="recipient-prenom" class="col-form-label">Prénom:</label>
                           <input type="text" name="firstName" class="form-control" id="recipient-prenom">

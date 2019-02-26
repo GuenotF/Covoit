@@ -32,13 +32,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link active" href="homeloggedpassenger">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link active" href="homeloggedpassenger">Accueil <span class="sr-only">(current)</span></a>
                         <a class="nav-item nav-link" href="profile">Profil</a>
+                        <a class="nav-item nav-link" href="admin">Admin</a>
                         <a class="nav-item nav-link" href="#">Se déconnecter</a>
                     </div>
                 </div>
             </nav>
-        </div>
+        </div>a
     </div>
 
 
