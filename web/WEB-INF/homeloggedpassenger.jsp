@@ -40,8 +40,8 @@
                                 </div>
                                 <div class="col-auto my-1">
                                     <div class="custom-control custom-checkbox mr-sm-2">
-                                        <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                        <label class="custom-control-label" for="customControlAutosizing">Par défaut</label>
+                                        <input type="checkbox" class="custom-control-input" id="defaultstartpoint">
+                                        <label class="custom-control-label" for="defaultstartpoint">Par défaut</label>
                                     </div>
                                 </div>
                                 <div class="col-auto my-1">
@@ -55,8 +55,8 @@
                                 </div>
                                 <div class="col-auto my-1">
                                     <div class="custom-control custom-checkbox mr-sm-2">
-                                        <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                        <label class="custom-control-label" for="customControlAutosizing">Par défaut</label>
+                                        <input type="checkbox" class="custom-control-input" id="defaultendpoint">
+                                        <label class="custom-control-label" for="defaultendpoint">Par défaut</label>
                                     </div>
                                 </div>
                                 <div class="col-auto my-1">
