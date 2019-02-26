@@ -8,9 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "HomeLoggedConductor", urlPatterns = "/homeloggedconductor")
-public class HomeLoggedConductor extends HttpServlet {
-    private boolean isLoggedIn = true;
+@WebServlet(name = "LogOut", urlPatterns = "/logout")
+public class LogOut extends HttpServlet {
+
+    private static final String SESSION = "session";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -18,6 +19,10 @@ public class HomeLoggedConductor extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        this.getServletContext().getRequestDispatcher("/WEB-INF/homeloggedconductor.jsp").forward(request, response);
+        HttpSession session = request.getSession();
+        session.setAttribute( SESSION, null );
+
+        this.getServletContext().getRequestDispatcher("/WEB-INF/user/login.jsp").forward(request, response);
+
     }
 }
