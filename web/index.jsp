@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags" %>
 
-<template:template_base title="index">
+<template:template_home title="index">
   <jsp:attribute name="content">
         <div id="welcome" class="container">
           <div class="row justify-content-center">
@@ -12,4 +12,4 @@
           </div>
         </div>
   </jsp:attribute>
-</template:template_base>
+</template:template_home>

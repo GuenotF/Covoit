@@ -1,6 +1,7 @@
 <%@ tag language="java" pageEncoding="UTF-8" %>
 <%@ attribute name="title" required="true" rtexprvalue="true" %>
 <%@ attribute name="content" fragment="true" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
