@@ -16,37 +16,35 @@
                     <div class="covoit-home-list-content-details">
                         <div class="covoit-row-middle">
                             <div class="col-sm-12 col-lg-9  p-4">
-                                <div></div>
-                                    <div>
-                                        <div class="form-inline">
-                                            <div class="p-2">
-                                            <label style="font-size: large">Parlez nous de vous:</label>
+                                    <form class="d-flex justify-content-between pl-2 mt-2" action="profile">
+                                        <div>
+                                            <div class="form-inline">
+                                                <div class="p-2">
+                                                    <label style="font-size: large">Parlez nous de vous:</label>
+                                                </div>
+                                                <input type="text" style="width: 100%" class="form-control" name="comment">
                                             </div>
-                                            <input type="text" style="width: 100%" class="form-control">
                                         </div>
-                                    </div>
-
-                                    <form class="d-flex justify-content-between pl-2 mt-2">
                                         <div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" data-toggle="tooltip"
-                                                       data-html="true" title="le tabac c'est taboo...">
+                                                       data-html="true" title="le tabac c'est taboo..." value="1" name="smoker">
                                                 <img src="assets/src/ressources/smoking.png" style="height: 40px; width: 40px">
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" data-toggle="tooltip"
-                                                       data-html="true"
+                                                       data-html="true" value="1" name="music"
                                                        title="Branchez la guitare, Entonnez le tambour, Moi, j'accorde ma basse, Un, deux, trois, quatre…">
                                                 <img src="assets/src/ressources/music.png" style="height: 40px; width: 40px">
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" data-toggle="tooltip"
-                                                       data-html="true" title="vous les aimez beaucoup (trop)!!!">
+                                                       data-html="true" title="vous les aimez beaucoup (trop)!!!" value="1" name="pet">
                                                 <img src="assets/src/ressources/pet.png" style="height: 40px; width: 40px">
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" data-toggle="tooltip"
-                                                       data-html="true" title="blabla">
+                                                       data-html="true" title="blabla" value="1" name="bavard">
                                                 <img src="assets/src/ressources/talk.png" style="height: 40px; width: 40px">
                                             </div>
                                         </div>
@@ -91,14 +89,14 @@
                             <label>nombre de places:</label>
                         </div>
                         <div class="d-flex justify-content-start form-group">
-                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect1">
                                 <option selected>Nombre de places disponibles</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="2">3</option>
-                                <option value="1">4</option>
-                                <option value="2">5</option>
-                                <option value="2">6</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
                             </select>
                         </div>
                     </div>
@@ -107,7 +105,7 @@
                             <div>
                                 <img src="assets/src/ressources/schedule-100.png">
                             </div>
-                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect2">
                                 <option selected>Créneau du matin</option>
                                 <option value="1">06h - 07h</option>
                                 <option value="2">07h - 08h</option>
