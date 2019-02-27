@@ -67,7 +67,7 @@ public class AdminServlet extends HttpServlet {
         if(!isLoggedIn){
             this.getServletContext().getRequestDispatcher("/WEB-INF/user/login.jsp").forward(request, response);
         } else {
-            this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+            this.getServletContext().getRequestDispatcher("/WEB-INF/admin.jsp").forward(request, response);
         }
 
     }

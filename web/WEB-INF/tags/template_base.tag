@@ -41,7 +41,7 @@
                         <a class="nav-item nav-link" href="profile">Profil</a>
                         <%}%>
                         <% UsersEntity userTemp = (UsersEntity) session.getAttribute("session");
-                            if (session.getAttribute("session") !=null && userTemp.getIsAdmin() == 0){ %>
+                            if (session.getAttribute("session") !=null && userTemp.getIsAdmin() == 1){ %>
                         <a class="nav-item nav-link" href="admin">Admin</a>
                         <%}%>
                         <% if (session.getAttribute("session") != null){ %>
