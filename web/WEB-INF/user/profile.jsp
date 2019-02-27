@@ -9,7 +9,7 @@
         <p class="page-top-title">Gestion du profil</p>
     </div>
     <div class="container" id="page-profile">
-        <p class="page-top-title">    Bienvenue Toto</p>
+        <p class="page-top-title">Bienvenue</p>
         <div class="row">
             <div class="col-sm-12 col-md-8 col-lg-8">
                 <div class="covoit-container">
@@ -25,19 +25,19 @@
                                 <div class="d-flex justify-content-start form-group">
                                     <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" data-toggle="tooltip" data-html="true" title="le tabac c'est taboo...">
-                                    <img src="assets/src/ressources/smoking.png" style="height: 25px; width: 25px">
+                                    <img src="assets/src/ressources/smoking.png" style="height: 40px; width: 40px">
                                     </div>
                                     <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" data-toggle="tooltip" data-html="true" title="Branchez la guitare, Entonnez le tambour, Moi, j'accorde ma basse, Un, deux, trois, quatre…">
-                                        <img src="assets/src/ressources/music.png" style="height: 25px; width: 25px">
+                                        <img src="assets/src/ressources/music.png" style="height: 40px; width: 40px">
                                     </div>
                                     <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" data-toggle="tooltip" data-html="true" title="vous les aimez beaucoup (trop)!!!">
-                                        <img src="assets/src/ressources/pet.png" style="height: 25px; width: 25px">
+                                        <img src="assets/src/ressources/pet.png" style="height: 40px; width: 40px">
                                     </div>
                                     <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" data-toggle="tooltip" data-html="true" title="blabla">
-                                        <img src="assets/src/ressources/talk.png" style="height: 25px; width: 25px">
+                                        <img src="assets/src/ressources/talk.png" style="height: 40px; width: 40px">
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +86,6 @@
                                 <input type="text" class="form-control">
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
