@@ -8,10 +8,10 @@
       <img src="assets/src/ressources/icons8-system-administrator-female-100.png" >
       <p class="page-top-title">Interface d'administration</p>
     </div>
-    <div class="container" id="page-home">
+    <div class="container-flex" id="page-home">
           <div class="row">
 
-            <div class="col-4">
+            <div class="col-6 p-4">
               <button class="btn btn-lg btn-primary btn-block" type="submit" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Ajouter un utilisateur </button>
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -55,9 +55,7 @@
               <br>
               <button class="btn btn-lg btn-primary btn-block" type="submit">Récupération mdp</button>
             </div>
-            <div class="col-2">
-            </div>
-            <div class="col-5">
+            <div class="col-6 p-4">
               <table class="table table-striped">
                 <thead>
                 <tr>
