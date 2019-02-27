@@ -21,8 +21,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 pos => {
+                    const xhr = new XMLHttpRequest();
+                    const method = 'POST';
+                    const url = '/covoit_war_exploded/homeloggedpassenger';
+                    const data = `latitude=${pos.coords.latitude}&longitude=${pos.coords.longitude}`;
+
+                    xhr.open(method, url, true);
+                    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhr.setRequestHeader("Content-length", data.length);
+                    //xhr.setRequestHeader("Content-Type", "application/json");
+                    xhr.onreadystatechange = function () {
+                        if(xhr.readyState === 4 && xhr.status === 200) {
+                            console.log(this.response);
+                            console.log('pouet')
+                        }
+                    };
+
+                    xhr.send(data.toString());
                     map.setView([pos.coords.latitude, pos.coords.longitude], 15);
-                    var iconCar = L.icon({
+                    const iconCar = L.icon({
                         iconUrl: 'assets/dist/images/street-view.png',
                         //shadowUrl: 'leaf-shadow.png',
                         iconSize:     [64, 64],
