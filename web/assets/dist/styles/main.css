@@ -7366,7 +7366,9 @@ body {
   margin-bottom: 30px; }
 .covoit-profile-content form img {
     min-width: 120px;
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     margin: auto; }
 .covoit-profile-list-content {
   margin-bottom: 30px; }

@@ -24,4 +24,8 @@ import '../ressources/smoking.png'
 import '../ressources/pet.png'
 import '../ressources/music.png'
 import '../ressources/talk.png'
+import '../ressources/avatar.png'
+import '../ressources/car-100.png'
+import '../ressources/schedule-100.png'
+
 
