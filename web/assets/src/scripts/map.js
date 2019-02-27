@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const options = { enableHighAccuracy: true, zoom:15, timeout: 1500, maximumAge: 0 };
     const map = L.map('map', {minZoom: 5,
         maxZoom: 20});
-    const markers = [
+    /*const markers = [
         ["marker1",43.5929881,1.4494229],
         ["marker2",43.6103199,1.4238506],
         ["marker3",43.6864497,1.3722365],
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ["marker7",43.6605848,1.4169271],
         ["marker8",43.6685991,1.4066492],
         ["marker9",43.6582622,1.3677737]
-    ];
+    ];*/
 
 
     initMap(map);
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 pos => {
                     const xhr = new XMLHttpRequest();
                     const method = 'POST';
-                    const url = '/covoit_war_exploded/homeloggedpassenger';
+                    const url = '/Covoit_war_exploded/homeloggedpassenger';
                     const data = `latitude=${pos.coords.latitude}&longitude=${pos.coords.longitude}`;
 
                     xhr.open(method, url, true);
@@ -32,8 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     //xhr.setRequestHeader("Content-Type", "application/json");
                     xhr.onreadystatechange = function () {
                         if(xhr.readyState === 4 && xhr.status === 200) {
-                            console.log(this.response);
-                            console.log('pouet')
+                            addMarkers(JSON.parse(this.response))
                         }
                     };
 
@@ -55,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             //maxZoom: 10,
                             attribution: '&copy; Openstreetmap France | &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                         }).addTo(map);
-                    addMarkers(markers);
+
                 },
                 error => {console.log(error);
                 }, options
@@ -65,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function addMarkers(markers) {
         markers.forEach(item => {
+            console.log(item);
             var iconUser = L.icon({
                 iconUrl: 'assets/dist/images/place-marker.png',
                 //shadowUrl: 'leaf-shadow.png',
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 //shadowAnchor: [4, 62],
                 //popupAnchor:  [-3, -76]
             });
-            let marker = new L.marker([item[1],item[2]], {icon: iconUser}).bindPopup(item[0]).addTo(map);
+            let marker = new L.marker([item.lat,item.lon], {icon: iconUser}).bindPopup(item.username).addTo(map);
             marker.bounce({duration: 500, height: 100}, function(){console.log("done")});
         })
     }
