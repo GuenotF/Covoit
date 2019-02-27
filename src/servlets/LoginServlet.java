@@ -33,6 +33,7 @@ public class LoginServlet extends HttpServlet {
         if ( form.getErrors().isEmpty() ) {
             session.setAttribute( SESSION, user );
             response.sendRedirect(VIEW_HOME);
+
         } else {
             session.setAttribute( SESSION, null );
             this.getServletContext().getRequestDispatcher( VIEW ).forward( request, response );
@@ -40,6 +41,8 @@ public class LoginServlet extends HttpServlet {
 
         request.setAttribute( FORM, form );
         request.setAttribute( USER, user );
+
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

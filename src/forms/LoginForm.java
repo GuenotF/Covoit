@@ -24,7 +24,7 @@ public class LoginForm {
         return errors;
     }
 
-    public UsersDAO login(HttpServletRequest request ) {
+    public UsersEntity login(HttpServletRequest request ) {
         String email = getValeurChamp( request, EMAIL );
         String password = getValeurChamp( request, PASSWORD );
         HttpSession session;
@@ -58,7 +58,7 @@ public class LoginForm {
             results = "Échec de la connexion.";
         }
 
-        return usersDAO;
+        return user;
     }
 
     private void validationEmail( String email ) throws Exception {
